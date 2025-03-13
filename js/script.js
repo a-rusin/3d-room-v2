@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("./../assets/draco/");
+  dracoLoader.setDecoderPath("https://a-rusin.github.io/3d-room-v2/assets/draco/");
 
   const gltfLoader = new GLTFLoader();
   gltfLoader.setDRACOLoader(dracoLoader);
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scene.add(roomLights.global);
 
   gltfLoader.load(
-    "./../assets/models/room/3d-room.gltf",
+    "https://a-rusin.github.io/3d-room-v2/assets/models/room/3d-room.gltf",
     function (gltf) {
       const modelCamera = gltf.scene.getObjectByName("RS_Camera");
       if (modelCamera && modelCamera.isCamera) {
@@ -151,23 +151,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateMaterials(scene) {
-    const alphaTexturePlant = textureLoader.load("./../assets/textures/plant_alpha_texture.png", (loadedTexture) => {
-      loadedTexture.flipY = false;
-      loadedTexture.encoding = THREE.sRGBEncoding;
-    });
-
-    const alphaTextureCleanerShadow = textureLoader.load(
-      "./../assets/textures/cleaner-shadow-texture-alpha.png",
+    const alphaTexturePlant = textureLoader.load(
+      "https://a-rusin.github.io/3d-room-v2/assets/textures/plant_alpha_texture.png",
       (loadedTexture) => {
         loadedTexture.flipY = false;
         loadedTexture.encoding = THREE.sRGBEncoding;
       }
     );
 
-    const alphaTextureBedLight = textureLoader.load("./../assets/textures/light-texture-1.png", (loadedTexture) => {
-      loadedTexture.flipY = false;
-      loadedTexture.encoding = THREE.sRGBEncoding;
-    });
+    const alphaTextureCleanerShadow = textureLoader.load(
+      "https://a-rusin.github.io/3d-room-v2/assets/textures/cleaner-shadow-texture-alpha.png",
+      (loadedTexture) => {
+        loadedTexture.flipY = false;
+        loadedTexture.encoding = THREE.sRGBEncoding;
+      }
+    );
+
+    const alphaTextureBedLight = textureLoader.load(
+      "https://a-rusin.github.io/3d-room-v2/assets/textures/light-texture-1.png",
+      (loadedTexture) => {
+        loadedTexture.flipY = false;
+        loadedTexture.encoding = THREE.sRGBEncoding;
+      }
+    );
 
     scene.traverse((child) => {
       if (child.name === "plant_lv" || child.name === "plant_br" || child.name === "plant_kt") {
