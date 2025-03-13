@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const isDevMode = false;
 
+  console.log(isDevMode);
+
   const canvas = document.querySelector("canvas.webgl");
 
   const debugBtn0 = document.querySelector(".debug-btn.debug-btn-0");
