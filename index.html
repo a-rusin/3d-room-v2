@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alice Smart Home</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="debug-btn debug-btn-0">Global</div>
+
+    <div class="loader">
+      <div class="loader-icon"></div>
+    </div>
+
+    <div class="first-touch">
+      <div class="first-touch-icon"></div>
+    </div>
+
+    <div class="phone">
+      <div class="phone-icon"></div>
+      <div class="phone-content">
+        <div class="app-title">Мой дом</div>
+        <ul class="rooms">
+          <li class="room-item active" data-room="all">Все</li>
+          <li class="room-item" data-room="livingroom">Гостиная</li>
+          <li class="room-item" data-room="bedroom">Спальня</li>
+          <li class="room-item" data-room="kitchen">Кухня</li>
+        </ul>
+        <ul class="devices-btns">
+          <li class="device-btn duo-max" data-room="kitchen">
+            <div class="device-img"></div>
+            <div class="device-name">Станция</div>
+            <div class="device-room">Кухня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info" data-info-btn="duo_max_kt"></li>
+            </ul>
+          </li>
+          <li class="device-btn bulb bulb-1" data-room="kitchen">
+            <div class="device-img"></div>
+            <div class="device-name">Лампочка 1</div>
+            <div class="device-room">Кухня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn bulb bulb-2" data-room="kitchen">
+            <div class="device-img"></div>
+            <div class="device-name">Лампочка 2</div>
+            <div class="device-room">Кухня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn tape" data-room="kitchen">
+            <div class="device-img"></div>
+            <div class="device-name">Лента</div>
+            <div class="device-room">Кухня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn cleaner" data-room="kitchen">
+            <div class="device-img"></div>
+            <div class="device-name">Пылесос</div>
+            <div class="device-room">Кухня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+              <li class="device-btn-item info" data-info-btn="cleaner_robot_kt"></li>
+            </ul>
+          </li>
+          <li class="device-btn motion-sensor" data-room="kitchen">
+            <div class="device-img"></div>
+            <div class="device-name">Датчик 1</div>
+            <div class="device-room">Кухня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info" data-info-btn="motion_sensor_kt"></li>
+            </ul>
+          </li>
+          <li class="device-btn max" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Станция</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info debug-btn-15" data-info-btn="station_max_lv"></li>
+            </ul>
+          </li>
+          <li class="device-btn tv" data-room="livingroom">
+            <div class="device-img tv"></div>
+            <div class="device-name">ТВ Станция</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+              <li class="device-btn-item info" data-info-btn="tv_lv"></li>
+            </ul>
+          </li>
+          <li class="device-btn bulb bulb-1" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Лампочка 1</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn bulb bulb-2" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Лампочка 2</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn tape" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Лента</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn switch" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Выключатель</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info" data-info-btn="smart_switcher_yandex_lv"></li>
+            </ul>
+          </li>
+          <li class="device-btn ik-rmt-ctrl" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Умный пульт</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info" data-info-btn="remove_ik_controller_lv"></li>
+            </ul>
+          </li>
+          <li class="device-btn cond" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Кондей</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+              <li class="device-btn-item info" data-info-btn="conditioner_moving_part_lv"></li>
+            </ul>
+          </li>
+          <li class="device-btn humd" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Увлажнитель</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+              <li class="device-btn-item info" data-info-btn="humdifier_lv"></li>
+            </ul>
+          </li>
+          <li class="device-btn socket" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Розетка</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info" data-info-btn="smart_socket_yandex_lv"></li>
+            </ul>
+          </li>
+          <li class="device-btn temp-sensor" data-room="livingroom">
+            <div class="device-img"></div>
+            <div class="device-name">Датчик</div>
+            <div class="device-room">Гостинная</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info" data-info-btn="sensor_temp_lv"></li>
+            </ul>
+          </li>
+          <li class="device-btn midi" data-room="bedroom">
+            <div class="device-img"></div>
+            <div class="device-name">Станция</div>
+            <div class="device-room">Спальня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info" data-info-btn="midi_br"></li>
+            </ul>
+          </li>
+          <li class="device-btn bulb bulb-1" data-room="bedroom">
+            <div class="device-img"></div>
+            <div class="device-name">Лампочка 1</div>
+            <div class="device-room">Спальня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn bulb bulb-2" data-room="bedroom">
+            <div class="device-img"></div>
+            <div class="device-name">Лампочка 2</div>
+            <div class="device-room">Спальня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn tape" data-room="bedroom">
+            <div class="device-img"></div>
+            <div class="device-name">Лента</div>
+            <div class="device-room">Спальня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+            </ul>
+          </li>
+          <li class="device-btn curtains" data-room="bedroom">
+            <div class="device-img"></div>
+            <div class="device-name">Жалюзи</div>
+            <div class="device-room">Спальня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+              <li class="device-btn-item info" data-info-btn="curtain_right_br"></li>
+            </ul>
+          </li>
+          <li class="device-btn humd" data-room="bedroom">
+            <div class="device-img"></div>
+            <div class="device-name">Увлажнитель</div>
+            <div class="device-room">Спальня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item action" data-action-btn=""></li>
+              <li class="device-btn-item info" data-info-btn="air_humdifier_br"></li>
+            </ul>
+          </li>
+          <li class="device-btn switch" data-room="bedroom">
+            <div class="device-img"></div>
+            <div class="device-name">Выключатель</div>
+            <div class="device-room">Спальня</div>
+            <ul class="device-btns">
+              <li class="device-btn-item info" data-info-btn="smart_switcher_yandex_br"></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-wrapper">
+        <h5 class="info-box-name">Станция Дуо Макс</h5>
+        <p class="info-box-about">Новая мощная ультра крутая станция от Яндекса</p>
+        <a href="#" class="info-box-url" target="_blank">Подробнее</a>
+        <div class="info-box-close"></div>
+      </div>
+    </div>
+
+    <div class="bg-music-icon"></div>
+
+    <audio id="humd">
+      <source src="./../assets/audio/humd.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="bg-mus">
+      <source src="./../assets/audio/bg-mus.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <canvas class="webgl"></canvas>
+
+    <script src="https://yastatic.net/s3/lpc-ext/static/_lib/three.js/0.152.2/three.min.js"></script>
+    <script src="https://yastatic.net/s3/lpc-ext/static/_lib/three.js/0.152.2/GLTFLoader.js"></script>
+    <script src="https://yastatic.net/s3/lpc-ext/static/_lib/three.js/0.152.2/DRACOLoader.js"></script>
+    <script src="https://yastatic.net/s3/lpc-ext/static/_lib/three.js/0.152.2/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.5/dist/gsap.min.js"></script>
+    <script src="./js/devicesInfo.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,437 @@
+:root {
+  --modal-open-duration: 0.2s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+html {
+  font-family: "YS Text", "Arial", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  font-size: 16px;
+}
+
+audio {
+  display: none;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  z-index: 10;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transition: all 0.5s ease-in-out;
+}
+
+.loader.hidden {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-icon {
+  width: 100px;
+  height: 100px;
+  background-image: url("./../assets/imgs/loader-alice.gif");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.debug-btn {
+  position: fixed;
+  font-size: 12px;
+  z-index: 2;
+  background: #fff;
+  padding: 8px 18px;
+  cursor: pointer;
+  user-select: none; /* Пользователи не могут выделять текст */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.debug-btn.debug-btn-0 {
+  left: 10px;
+  bottom: 10px;
+}
+
+.phone {
+  position: fixed;
+  right: 10px;
+  bottom: -650px;
+  /* bottom: 10px; */
+  z-index: 3;
+  opacity: 0.9;
+  transition: bottom 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.phone.active {
+  bottom: 10px;
+}
+
+.phone-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  text-align: right;
+  margin-right: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  visibility: visible;
+  background-image: url("./../assets/imgs/mobile-phone-icon.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 60px;
+}
+
+.phone.active .phone-icon {
+  background-image: url("./../assets/imgs/close-icon-2.svg");
+  background-size: 40%;
+
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.phone-content {
+  margin-top: 15px;
+  padding: 70px 24px 0 24px;
+  width: 300px;
+  height: 644px;
+  background-image: url("./../assets/imgs/phone-base-ui-bg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.phone.active .phone-content {
+  margin-top: 0;
+}
+
+.app-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.rooms {
+  padding: 20px 0;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  overflow-x: scroll;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE и Edge */
+}
+
+.rooms::-webkit-scrollbar {
+  display: none;
+}
+
+.room-item {
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0.5;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+}
+
+.room-item.active {
+  opacity: 1;
+}
+
+.devices-btns {
+  padding-bottom: 24px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  height: 476px;
+  overflow-y: scroll;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE и Edge */
+}
+
+.devices-btns::-webkit-scrollbar {
+  display: none;
+}
+
+.device-btn {
+  flex: 0 1 122px;
+  /* height: 122px; */
+  padding: 0 10px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.device-img {
+  background-position: top 10px center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  flex: 0 0 70px;
+  width: 70px;
+  height: 70px;
+}
+
+.device-btn.bulb .device-img {
+  background-image: url("./../assets/imgs/bulb.png");
+  background-position: center;
+  background-size: 110%;
+}
+
+.device-btn.tape .device-img {
+  background-image: url("./../assets/imgs/tape.png");
+  background-size: 100%;
+}
+
+.device-btn.tv .device-img {
+  background-image: url("./../assets/imgs/tv.png");
+  background-size: 82%;
+}
+
+.device-btn.switch .device-img {
+  background-image: url("./../assets/imgs/switch.png");
+  background-size: 100%;
+}
+
+.device-btn.ik-rmt-ctrl .device-img {
+  background-image: url("./../assets/imgs/ik-rmt-ctrl.png");
+}
+
+.device-btn.cond .device-img {
+  background-image: url("./../assets/imgs/cond.png");
+}
+
+.device-btn.humd .device-img {
+  background-image: url("./../assets/imgs/humd.png");
+}
+
+.device-btn.socket .device-img {
+  background-image: url("./../assets/imgs/socket.png");
+}
+
+.device-btn.temp-sensor .device-img {
+  background-image: url("./../assets/imgs/temp-sensor.png");
+}
+
+.device-btn.motion-sensor .device-img {
+  background-image: url("./../assets/imgs/motion-sensor.png");
+  background-size: 80%;
+  background-position: top 20px center;
+}
+
+.device-btn.max .device-img {
+  background-image: url("./../assets/imgs/max.png");
+  background-size: 95%;
+}
+
+.device-btn.midi .device-img {
+  background-image: url("./../assets/imgs/midi.png");
+  background-size: 95%;
+}
+
+.device-btn.curtains .device-img {
+  background-image: url("./../assets/imgs/curtains.png");
+  background-size: 95%;
+}
+
+.device-btn.duo-max .device-img {
+  background-image: url("./../assets/imgs/duo-max.png");
+  background-size: 95%;
+}
+
+.device-btn.cleaner .device-img {
+  background-image: url("./../assets/imgs/cleaner.png");
+  background-size: 100%;
+}
+
+.device-name {
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  padding-top: 8px;
+}
+
+.device-room {
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  font-weight: 300;
+  padding-top: 4px;
+}
+
+.device-btns {
+  display: flex;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.device-btn-item {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.device-btn-item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.device-btn-item.busy,
+.device-btn-item.active {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.device-btn-item.busy {
+  pointer-events: none;
+}
+
+.device-btn-item.action {
+  background-size: 18px;
+  background-image: url("./../assets/imgs/on-off-icon.svg");
+}
+
+.device-btn-item.info {
+  background-size: 18px;
+  background-image: url("./../assets/imgs/info-icon.svg");
+}
+
+.info-box {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #000;
+  border-radius: 8px;
+  display: none; /* Hidden by default */
+  z-index: 20;
+  max-width: 270px;
+}
+
+.info-box-wrapper {
+  padding: 10px;
+  position: relative;
+}
+
+.info-box-name {
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 4px;
+}
+
+.info-box-about {
+  font-size: 14px;
+  padding-top: 4px;
+}
+
+.info-box-url {
+  display: inline-block;
+  font-size: 14px;
+  padding-top: 8px;
+  text-decoration: underline;
+  color: #000;
+}
+
+.info-box-url:hover {
+  text-decoration: underline;
+}
+
+.info-box-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-image: url("./../assets/imgs/close-icon.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.bg-music-icon {
+  position: fixed;
+  z-index: 2;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: rgb(0, 0, 0);
+  background-image: url("./../assets/imgs/stop-music.svg");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.first-touch {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.first-touch.hidden {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.first-touch-icon {
+  width: 500px;
+  height: 250px;
+  background-image: url("./../assets/imgs/mouse-1.gif");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
