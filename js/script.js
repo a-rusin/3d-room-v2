@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("./../assets//draco/");
+  dracoLoader.setDecoderPath("./../assets/draco/");
 
   const gltfLoader = new GLTFLoader();
   gltfLoader.setDRACOLoader(dracoLoader);
@@ -149,20 +149,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateMaterials(scene) {
-    const alphaTexturePlant = textureLoader.load("./../assets//textures/plant_alpha_texture.png", (loadedTexture) => {
+    const alphaTexturePlant = textureLoader.load("./../assets/textures/plant_alpha_texture.png", (loadedTexture) => {
       loadedTexture.flipY = false;
       loadedTexture.encoding = THREE.sRGBEncoding;
     });
 
     const alphaTextureCleanerShadow = textureLoader.load(
-      "./../assets//textures/cleaner-shadow-texture-alpha.png",
+      "./../assets/textures/cleaner-shadow-texture-alpha.png",
       (loadedTexture) => {
         loadedTexture.flipY = false;
         loadedTexture.encoding = THREE.sRGBEncoding;
       }
     );
 
-    const alphaTextureBedLight = textureLoader.load("./../assets//textures/light-texture-1.png", (loadedTexture) => {
+    const alphaTextureBedLight = textureLoader.load("./../assets/textures/light-texture-1.png", (loadedTexture) => {
       loadedTexture.flipY = false;
       loadedTexture.encoding = THREE.sRGBEncoding;
     });
